@@ -1,7 +1,6 @@
 package com.example.buynow
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,10 +9,12 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.buynow.Utils.Extensions.toast
-import com.example.buynow.Utils.FirebaseUtils
 import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
+import com.google.firebase.auth.FirebaseAuth
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -34,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        val forgottenPasswordTv = findViewById<TextView>(R.id.forgottenPassTv)
 
         val signUpTv = findViewById<TextView>(R.id.signUpTv)
         signInBtn = findViewById(R.id.loginBtn)
@@ -51,6 +53,18 @@ class LoginActivity : AppCompatActivity() {
         signUpTv.setOnClickListener {
             intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+        }
+        forgottenPasswordTv.setOnClickListener {
+            FirebaseAuth.getInstance().sendPasswordResetEmail(emailEt.text.toString())
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        forgottenPasswordTv.text = "Reset Email Sent!"
+                    } else {
+                        forgottenPasswordTv.text = "Email failure"
+                    }
+                }
+
+
         }
 
         signInBtn.setOnClickListener {

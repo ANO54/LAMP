@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.buynow.Utils.Extensions.toast
@@ -55,14 +56,31 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
         forgottenPasswordTv.setOnClickListener {
-            FirebaseAuth.getInstance().sendPasswordResetEmail(emailEt.text.toString())
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        forgottenPasswordTv.text = "Reset Email Sent!"
-                    } else {
-                        forgottenPasswordTv.text = "Email failure"
+            Toast.makeText(this@LoginActivity,"Checking for forgotten password...",Toast.LENGTH_SHORT).show()
+
+            if (emailEt.text.isNotEmpty()) {
+                firebaseAuth.sendPasswordResetEmail(emailEt.text.toString())
+                    .addOnCompleteListener { task ->
+                        Toast.makeText(this@LoginActivity,"Starting task",Toast.LENGTH_LONG).show()
+
+                        if (task.isSuccessful) {
+                            forgottenPasswordTv.text = "Reset Email Sent!"
+                            Toast.makeText(this@LoginActivity,"Email sent",Toast.LENGTH_LONG).show()
+
+                        } else {
+                            forgottenPasswordTv.text = "Email failure"
+                            Toast.makeText(this@LoginActivity,"Failure",Toast.LENGTH_LONG).show()
+
+                        }
+                    }.addOnFailureListener { task ->
+                        Toast.makeText(this@LoginActivity,"Failure",Toast.LENGTH_LONG).show()
                     }
-                }
+
+            } else {
+                Toast.makeText(this@LoginActivity,"Please fill in the email field first",Toast.LENGTH_LONG).show()
+            }
+
+
 
 
         }

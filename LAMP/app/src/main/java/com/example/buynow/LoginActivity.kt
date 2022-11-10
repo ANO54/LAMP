@@ -15,6 +15,8 @@ import androidx.core.content.ContextCompat
 import com.example.buynow.Utils.Extensions.toast
 import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class LoginActivity : AppCompatActivity() {
@@ -30,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var emailError:TextView
     lateinit var passwordError:TextView
 
+    private lateinit var auth: FirebaseAuth
 
 
 
@@ -44,6 +47,7 @@ class LoginActivity : AppCompatActivity() {
         passEt = findViewById(R.id.PassEt)
         emailError = findViewById(R.id.emailError)
         passwordError = findViewById(R.id.passwordError)
+        auth = Firebase.auth
 
 
 

@@ -1,3 +1,7 @@
+@file:Suppress("OverrideDeprecatedMigration", "OverrideDeprecatedMigration",
+    "OverrideDeprecatedMigration", "OverrideDeprecatedMigration"
+)
+
 package com.example.buynow
 
 import android.annotation.TargetApi
@@ -31,6 +35,7 @@ import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.File
 import java.io.IOException
 
+@Suppress("OverrideDeprecatedMigration")
 class VisualSearchActivity : AppCompatActivity() {
 
 
@@ -159,6 +164,7 @@ class VisualSearchActivity : AppCompatActivity() {
 
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

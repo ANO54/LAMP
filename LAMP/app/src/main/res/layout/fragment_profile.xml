@@ -7,7 +7,7 @@
     android:background="@color/background"
     tools:context=".Fragment.ProfileFragment">
 
-<!--    Top Bar-->
+    <!--    Top Bar-->
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -21,13 +21,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_marginLeft="22dp"
-            android:gravity="center"
-            android:layout_weight="1"
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_weight="1"
             android:fontFamily="@font/metropolis_regular"
+            android:gravity="center"
             android:text="My Profile"
             android:textColor="@color/mainText"
             android:textSize="23sp"
@@ -41,8 +41,7 @@
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:src="@drawable/ic_search"
-            app:tint="@color/mainText"
-            />
+            app:tint="@color/mainText" />
 
     </LinearLayout>
 
@@ -52,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,70 +63,69 @@
             android:layout_height="70dp">
 
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileImage_profileFrag"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_profile"
-            app:civ_border_color="@color/black"
-            app:tint="@color/mainText"
-             />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage_profileFrag"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_profile"
+                app:civ_border_color="@color/black"
+                app:tint="@color/mainText" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/profileName_profileFrag"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/metropolis_regular"
-                android:text="Profile Name"
-                android:textColor="@color/mainText"
-                android:textSize="18sp" />
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/profileEmail_profileFrag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/metropolis_regular"
-                android:text="Profile Email"
-                android:textColor="@color/textAd"
-                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/profileName_profileFrag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:text="@string/profile_name"
+                    android:textColor="@color/mainText"
+                    android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/logout_profileFrag"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="75dp"
-                android:layout_height="50dp"
-                android:text="Log out"
-                android:fontFamily="@font/metropolis_regular"/>
+                <TextView
+                    android:id="@+id/profileEmail_profileFrag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:text="Profile Email"
+                    android:textColor="@color/textAd"
+                    android:textSize="14sp" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/logout_profileFrag"
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:text="Log out" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <Button
             android:id="@+id/uploadImage_profileFrag"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:visibility="gone"
-            android:layout_height="50dp"
-            android:background="@drawable/btn_bg"
+            android:background="@drawable/logo_file"
+            android:fontFamily="@font/metropolis_regular"
             android:text="Upload Image"
-            android:fontFamily="@font/metropolis_regular"/>
+            android:visibility="gone" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <androidx.cardview.widget.CardView
@@ -268,8 +266,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
-                        android:textColor="@color/textAd"
                         android:text="You Have no cart"
+                        android:textColor="@color/textAd"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -317,8 +315,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
-                        android:textColor="@color/textAd"
                         android:text="You have special promo codes"
+                        android:textColor="@color/textAd"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -370,8 +368,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
-                        android:textColor="@color/textAd"
                         android:text="Notifications, password"
+                        android:textColor="@color/textAd"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -386,10 +384,10 @@
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
-        android:visibility="gone"
         android:id="@+id/animationView"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

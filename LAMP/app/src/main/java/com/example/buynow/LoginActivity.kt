@@ -1,6 +1,7 @@
 package com.example.buynow
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,15 +10,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.buynow.Utils.Extensions.toast
+import com.example.buynow.Utils.FirebaseUtils
 import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,14 +28,12 @@ class LoginActivity : AppCompatActivity() {
     lateinit var emailError:TextView
     lateinit var passwordError:TextView
 
-    private lateinit var auth: FirebaseAuth
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val forgottenPasswordTv = findViewById<TextView>(R.id.forgottenPassTv)
 
         val signUpTv = findViewById<TextView>(R.id.signUpTv)
         signInBtn = findViewById(R.id.loginBtn)
@@ -47,7 +41,6 @@ class LoginActivity : AppCompatActivity() {
         passEt = findViewById(R.id.PassEt)
         emailError = findViewById(R.id.emailError)
         passwordError = findViewById(R.id.passwordError)
-        auth = Firebase.auth
 
 
 
@@ -58,35 +51,6 @@ class LoginActivity : AppCompatActivity() {
         signUpTv.setOnClickListener {
             intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
-        }
-        forgottenPasswordTv.setOnClickListener {
-            Toast.makeText(this@LoginActivity,"Checking for forgotten password...",Toast.LENGTH_SHORT).show()
-
-            if (emailEt.text.isNotEmpty()) {
-                firebaseAuth.sendPasswordResetEmail(emailEt.text.toString())
-                    .addOnCompleteListener { task ->
-                        Toast.makeText(this@LoginActivity,"Starting task",Toast.LENGTH_LONG).show()
-
-                        if (task.isSuccessful) {
-                            forgottenPasswordTv.text = "Reset Email Sent!"
-                            Toast.makeText(this@LoginActivity,"Email sent",Toast.LENGTH_LONG).show()
-
-                        } else {
-                            forgottenPasswordTv.text = "Email failure"
-                            Toast.makeText(this@LoginActivity,"Failure",Toast.LENGTH_LONG).show()
-
-                        }
-                    }.addOnFailureListener { task ->
-                        Toast.makeText(this@LoginActivity,"Failure",Toast.LENGTH_LONG).show()
-                    }
-
-            } else {
-                Toast.makeText(this@LoginActivity,"Please fill in the email field first",Toast.LENGTH_LONG).show()
-            }
-
-
-
-
         }
 
         signInBtn.setOnClickListener {

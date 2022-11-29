@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -116,7 +117,7 @@ class ProfileFragment : Fragment() {
             startActivity(Intent(context,PaymentMethodActivity::class.java))
         }
 
-        hideLayout()
+       // hideLayout()
 
 
 
@@ -144,6 +145,7 @@ class ProfileFragment : Fragment() {
 
 
         profileImage_profileFrag.setOnClickListener {
+            Toast.makeText(context,"Showing Context Menu", Toast.LENGTH_SHORT).show()
 
             val popupMenu: PopupMenu = PopupMenu(context,profileImage_profileFrag)
 
@@ -223,6 +225,7 @@ class ProfileFragment : Fragment() {
         if(filePath != null){
             val ref = storageReference?.child("profile_Image/" + UUID.randomUUID().toString())
             val uploadTask = ref?.putFile(filePath!!)
+            Toast.makeText(context,"Starting uploadTask", Toast.LENGTH_SHORT).show()
 
             val urlTask = uploadTask?.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
                 if (!task.isSuccessful) {
@@ -235,12 +238,11 @@ class ProfileFragment : Fragment() {
                 if (task.isSuccessful) {
                     val downloadUri = task.result
                     addUploadRecordToDb(downloadUri.toString())
-
                     // show save...
-
 
                 } else {
                     // Handle failures
+
                 }
             }?.addOnFailureListener{
 
@@ -251,7 +253,6 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

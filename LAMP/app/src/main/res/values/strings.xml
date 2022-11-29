@@ -13,4 +13,5 @@
     <string name="empty_favourite">Empty Favourite</string>
     <string name="add_to_bag">Add To Bag</string>
     <string name="card_number_star">**** **** **** </string>
+    <string name="profile_name">Profile Name</string>
 </resources>

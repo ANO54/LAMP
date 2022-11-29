@@ -1,2 +1,2 @@
-rootProject.name = "BuyNow"
+rootProject.name = "LAMP"
 include ':app'

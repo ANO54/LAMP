@@ -87,7 +87,7 @@ class ProfileFragment : Fragment() {
         logout_profileFrag = view.findViewById(R.id.logout_profileFrag)
         profileName_profileFrag = view.findViewById(R.id.profileName_profileFrag)
         profileEmail_profileFrag = view.findViewById(R.id.profileEmail_profileFrag)
-        animationView = view.findViewById(R.id.animationView)
+        //animationView = view.findViewById(R.id.animationView)
         linearLayout2 = view.findViewById(R.id.linearLayout2)
         linearLayout3 = view.findViewById(R.id.linearLayout3)
         linearLayout4 = view.findViewById(R.id.linearLayout4)

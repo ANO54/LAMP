@@ -96,14 +96,7 @@
                     android:textColor="@color/textAd"
                     android:textSize="14sp" />
 
-                <Button
-                    android:id="@+id/logout_profileFrag"
-                    android:layout_width="75dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/metropolis_regular"
-                    android:text="Log out" />
+
 
             </LinearLayout>
         </LinearLayout>
@@ -363,6 +356,8 @@
                         android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
+
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -371,6 +366,7 @@
                         android:text="Notifications, password"
                         android:textColor="@color/textAd"
                         android:textSize="12sp" />
+
 
                 </LinearLayout>
 
@@ -381,6 +377,13 @@
                     android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/logout_profileFrag"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="Log out"></Button>
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
@@ -393,6 +396,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_rawRes="@raw/circle_progress" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

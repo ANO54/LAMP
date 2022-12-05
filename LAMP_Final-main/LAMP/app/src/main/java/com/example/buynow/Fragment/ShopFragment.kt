@@ -73,7 +73,7 @@ class ShopFragment : Fragment() {
     }
 
     private fun setCategoryData() {
-        cateList.add(Category("Clothing","https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=649&q=80"))
+        cateList.add(Category("Clothing","https://i.imgur.com/ZKkPGDj.jpg"))
         cateList.add(Category("Jewelry","https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"))
         cateList.add(Category("Hair Accessories","https://images.unsplash.com/photo-1626954079979-ec4f7b05e032?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"))
         cateList.add(Category("Costume Accessories","https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"))
